@@ -69,7 +69,7 @@ def main():
     ckpt_wrapper(**vars(args))
 
 def ckpt_wrapper(exp_config: str, run_type: str, ckpt_path="", run_id=None, run_suffix="", opts=None) -> None:
-    if ckpt_path == "":
+    if not ckpt_path:
         run_exp(exp_config, run_type, ckpt_path=ckpt_path, run_id=run_id, run_suffix=run_suffix, opts=opts)
         return
     all_paths = ckpt_path.split(",")
@@ -102,7 +102,7 @@ def run_exp(exp_config: str, run_type: str, ckpt_path="", run_id=None, run_suffi
     config.LOG_FILE = os.path.join(config.LOG_FILE, f"{variant_name}.log") # actually a logdir
     if run_type == "eval":
         config.TRAINER_NAME = "ppo"
-        config.NUM_PROCESSES = 6 # nice
+        config.NUM_PROCESSES = 8 # nice
     else:
         # Add necessary supervisory signals
         train_sensors = config.RL.AUX_TASKS.required_sensors

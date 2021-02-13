@@ -1,9 +1,14 @@
-CHECKPOINT_FOLDER: "/srv/share/jye72/r3"
-LOG_FILE: "runs/r3"
-TENSORBOARD_DIR: "tb/r3/"
-VIDEO_DIR: "/srv/share/jye72/vis/videos/r3/"
+#CHECKPOINT_FOLDER: "/srv/share/jye72/r3"
+#LOG_FILE: "runs/r3"
+#TENSORBOARD_DIR: "tb/r3/"
+#VIDEO_DIR: "/srv/share/jye72/vis/videos/r3/"
 
-BASE_TASK_CONFIG_PATH: "configs/tasks/pointnav_gc.yaml"
+CHECKPOINT_FOLDER: "/home/rpartsey/code/3d-navigation/related_works/habitat-pointnav-aux/train_checkpoints"
+LOG_FILE: "/home/rpartsey/code/3d-navigation/related_works/habitat-pointnav-aux/runs"
+TENSORBOARD_DIR: "/home/rpartsey/code/3d-navigation/related_works/habitat-pointnav-aux/tb"
+VIDEO_DIR: "/home/rpartsey/code/3d-navigation/related_works/habitat-pointnav-aux/videos"
+
+BASE_TASK_CONFIG_PATH: "../configs/tasks/pointnav_gc.yaml"
 TRAINER_NAME: "ppo"
 ENV_NAME: "NavRLEnv"
 SIMULATOR_GPU_ID: 0
